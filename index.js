@@ -9,9 +9,9 @@ const menuItem = menuArray.map (function (item) {
         ${item.emoji}
     </div>
     <div class="mid">
-        <h4>${item.name}</h4>
-        <p>${item.ingredients.join(', ')}</p>
-        <h5>${item.price} $</h5>
+        <h4 class="itemName">${item.name}</h4>
+        <p class="itemIng">${item.ingredients.join(', ')}</p>
+        <h5 class="itemPrice">${item.price} $</h5>
     </div>
     <div class="end">
         <i class="fa-solid fa-plus circle"></i>
