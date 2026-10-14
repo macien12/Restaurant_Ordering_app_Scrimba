@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: "Smythe", system-ui;
 } 
 
 .smythe-regular {
@@ -45,6 +46,8 @@ header {
 
 .menuEl {
     display: flex;
+    align-items: flex-start;
+    gap: 10px;
 }
 
 .icon {
@@ -59,7 +62,7 @@ header {
     padding: 0;
     background: #fff;
     border: 1px solid #DEDEDE;
-    position:relative;
+    position: relative;
 }
 
 .circle {
@@ -69,4 +72,9 @@ header {
     transform: translateX(-50%) translateY(-50%); 
     color: #3C3C3C;
     font-size: 20px;
+}
+
+.main {
+    width: 290px;
+    margin: 0 auto;
 }

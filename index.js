@@ -21,4 +21,3 @@ const menuItem = menuArray.map (function (item) {
 
 menuEl.innerHTML += menuItem
 
-console.log(menuItem)
