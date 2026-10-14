@@ -2,6 +2,8 @@ import { menuArray } from './data.js'
 
 const menuEl = document.getElementById('menuContainer')
 
+const buttonPlusEl = document.getElementsByClassName('buttonPlus')
+
 
 const menuItem = menuArray.map (function (item) {
     return `<section class="menuEl">
@@ -14,7 +16,7 @@ const menuItem = menuArray.map (function (item) {
         <h5 class="itemPrice">${item.price} $</h5>
     </div>
     <div class="end">
-        <i class="fa-solid fa-plus circle"></i>
+        <button class="buttonPlus"><i class="fa-solid fa-plus circle"></i></button>
     </div>
     </section>`
 }).join('')
