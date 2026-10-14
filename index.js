@@ -10,8 +10,8 @@ const menuItem = menuArray.map (function (item) {
     </div>
     <div class="mid">
         <h4>${item.name}</h4>
-        <p>${item.ingredients}</p>
-        <h5>${item.price}</h5>
+        <p>${item.ingredients.join(', ')}</p>
+        <h5>${item.price} $</h5>
     </div>
     <div class="end">
         <i class="fa-solid fa-plus circle"></i>
