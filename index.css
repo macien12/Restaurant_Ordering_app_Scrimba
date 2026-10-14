@@ -19,14 +19,26 @@ body {
 
 header {
     background-image: url("./images/header.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 630px;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
 }
 
 #headerEl {
     position: relative;
     inset: auto;
     width: 500px;
-    margin: auto;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -20%;
+
+}
+.heading1 {
+    font-size: 4rem;
+    font-weight: 400;
+}
+.heading2 {
+    font-weight: lighter;
+    font-size: 2.5rem;
 }
