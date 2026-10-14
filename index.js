@@ -21,10 +21,13 @@ const menuItem = menuArray.map (function (item) {
         <p class="itemIng">${item.ingredients.join(', ')}</p>
         <h5 class="itemPrice">${item.price} $</h5>
     </div>
-    <div class="end" data-plus="${item.id}">
-        <button class="buttonPlus"><i class="fa-solid fa-plus circle"></i></button>
+    <div class="end">
+        <button class="buttonPlus" ><i class="fa-solid fa-plus circle" data-plus="${item.id}"></i></button>
     </div>
-    </section>`
+    </section>
+    
+    
+    `
 }).join('')
 
 menuEl.innerHTML += menuItem
@@ -33,5 +36,9 @@ function handleAddingItems(orderID){
     const handleObj = menuArray.filter(function(item) {
         return item.id === orderID
     })[0]
-    console.log("Test")
+    
+
+    if (orderID) {
+            document.getElementById('menuOrder').classList.remove('hidden')
+    }
 }
