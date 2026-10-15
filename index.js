@@ -27,7 +27,7 @@ const menuItem = menuArray.map (function (item) {
         <h5 class="itemPrice">${item.price} $</h5>
     </div>
     <div class="end">
-        <button class="buttonPlus" ><i class="fa-solid fa-plus circle data-plus="${item.id}></i></button>
+        <button class="buttonPlus" data-plus="${item.id}" ><i class="fa-solid fa-plus circle" ></i></button>
     </div>
     </section>
     
@@ -59,11 +59,10 @@ function handleAddingItems(orderID){
         return item.id === Number(orderID)
     })
     
-    if(!selectedItem) return
-
     basketArr.push(selectedItem)
 
     renderBasket()
+    updateTotalPrice()
 
     if (selectedItem) {
             document.getElementById('menuOrder').classList.remove('hidden')
