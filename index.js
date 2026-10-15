@@ -8,12 +8,16 @@ const orderedEl = document.getElementById('orderedItems')
 
 const totalPriceEl = document.getElementById('totalPrice')
 
+const modal = document.getElementById('modal')
+
 document.addEventListener('click', function(e) {
     const buttonPlus = e.target.closest('[data-plus]')
     if(buttonPlus){
         handleAddingItems(buttonPlus.dataset.plus)
     } else if  (e.target.dataset.remove) {
         handleRemoveClick(e.target.dataset.remove)
+    } else if (e.target.dataset.order) {
+        handleModal(e.target.dataset.order)
     }
 })
 
@@ -90,6 +94,10 @@ function handleRemoveClick(itemId) {
         updateTotalPrice()
         renderBasket()
     }
+}
+
+function handleModal(item){
+    item.classList.add("show")
 }
 
 

@@ -139,7 +139,7 @@ main {
     font-size: 24px;
 }
 
-.completeBtn {
+.completeBtn, .payButton {
     background-color: #16DB99;
     color: white;
     min-width: 100%;
@@ -167,5 +167,15 @@ main {
 
 .orderedPrice {
     font-size: 20px;
+}
+
+.modal-overlay{
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
 }
 
