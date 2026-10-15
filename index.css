@@ -131,7 +131,7 @@ main {
     font-size: 2rem;
 }
 
-.totalPrice{
+.priceEl {
     border-top: 2px solid black;
     font-size: 1.5rem;
     padding-top: 15px;
@@ -145,4 +145,10 @@ main {
     border-radius: 2px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
+}
+
+.itemPosition {
+    display: flex;
+    flex-direction: row;
+    align-content: space-evenly;
 }
