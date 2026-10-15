@@ -33,11 +33,13 @@ const menuItem = menuArray.map (function (item) {
 
 menuEl.innerHTML += menuItem
 
+const basketArr = []
+
 function handleAddingItems(orderID){
     const basketItems = document.getElementById('orderedItems')
-    const basketArr = []
-    const handleObj = menuArray.filter(function(item) {
-        return item.id === orderID
+    
+    const handleObj = menuArray.find(function(item) {
+        return item.id === Number(orderID)
     })[0]
     
 
