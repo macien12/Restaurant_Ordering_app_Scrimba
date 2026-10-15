@@ -34,6 +34,8 @@ const menuItem = menuArray.map (function (item) {
 menuEl.innerHTML += menuItem
 
 function handleAddingItems(orderID){
+    const basketItems = document.getElementById('orderedItems')
+    const basketArr = []
     const handleObj = menuArray.filter(function(item) {
         return item.id === orderID
     })[0]
@@ -42,4 +44,9 @@ function handleAddingItems(orderID){
     if (orderID) {
             document.getElementById('menuOrder').classList.remove('hidden')
     }
+
+
+    basketArr.push = [menuArray.item]
+    console.log(basketArr)
 }
+
