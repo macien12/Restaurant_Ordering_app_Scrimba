@@ -5,8 +5,9 @@ const menuEl = document.getElementById('menuContainer')
 const buttonPlusEl = document.getElementsByClassName('buttonPlus')
 
 document.addEventListener('click', function(e) {
-    if(e.target.dataset.plus){
-        handleAddingItems(e.target.dataset.plus)
+    const buttonPlus = e.target.closest('[data-plus]')
+    if(buttonPlus){
+        handleAddingItems(buttonPlus.dataset.plus)
     }
 })
 

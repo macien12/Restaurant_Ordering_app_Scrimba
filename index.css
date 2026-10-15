@@ -1,3 +1,15 @@
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+  
+
 body {
     margin: 0;
     padding: 0;
@@ -112,4 +124,20 @@ main {
 
 .hidden{
     display: none;
+}
+
+.orderTitle {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.totalPrice{
+    border-top: 2px solid black;
+    font-size: 1.5rem;
+    padding-top: 15px;
+}
+
+.completeBtn {
+    background-color: #16DB99;
+    color: white;
 }
