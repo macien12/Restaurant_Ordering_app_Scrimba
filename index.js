@@ -41,7 +41,18 @@ const basketArr = []
 
 function renderBasket(item) {
     const basketItem = basketArr.map (function (item) {
-    return `<div class="itemPosition"><p>${item.name} <button class="removeBtn" data-remove="${item.id}">remove</button></p> ${item.price}$</div>`}).join('')
+    return `
+            <div class="itemPosition">
+                <div class="itemDetails">
+                    <span class="orderedName">${item.name}</span>
+                    <button class="removeBtn" data-remove="${item.id}">
+                        remove
+                    </button>
+                </div>
+
+                <span class="orderedPrice">$${item.price}</span>
+            </div>
+    `}).join('')
 
     orderedEl.innerHTML = basketItem
 }
