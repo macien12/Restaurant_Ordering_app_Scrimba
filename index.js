@@ -97,7 +97,9 @@ function handleRemoveClick(itemId) {
 }
 
 function handleModal(item){
-    item.classList.add("show")
+    modal.classList.add("show")
+    console.log(item)
+console.log(typeof item)
 }
 
 
