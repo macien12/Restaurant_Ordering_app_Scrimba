@@ -4,6 +4,8 @@ const menuEl = document.getElementById('menuContainer')
 
 const buttonPlusEl = document.getElementsByClassName('buttonPlus')
 
+const orderedEl = document.getElementById('orderedItems')
+
 document.addEventListener('click', function(e) {
     const buttonPlus = e.target.closest('[data-plus]')
     if(buttonPlus){
@@ -40,7 +42,7 @@ function handleAddingItems(orderID){
     
     const handleObj = menuArray.find(function(item) {
         return item.id === Number(orderID)
-    })[0]
+    })
     
 
     if (orderID) {
@@ -48,7 +50,11 @@ function handleAddingItems(orderID){
     }
 
 
-    basketArr.push = [menuArray.item]
-    console.log(basketArr)
+    basketArr.push(handleObj)
+
+    const basketItem = basketArr.map (function (item) {
+    return `<p>${item.name} <button class="removeBtn" data-remove="${item.id}">remove</button> ${item.price}$</p>`}).join('')
+
+    orderedEl.innerHTML = basketItem
 }
 
