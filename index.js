@@ -82,16 +82,14 @@ function handleAddingItems(orderID){
     }
 }
 
-function handleRemoveClick(item) {
-    const selectedItem = basketArr.findIndex(item => item.id === Number(item))
+function handleRemoveClick(itemId) {
+    const selectedItem = basketArr.findIndex(item => item.id === Number(itemId))
 
-    if (selectedItem) {
+    if (selectedItem !== -1) {
         basketArr.splice(selectedItem, 1)
         updateTotalPrice()
         renderBasket()
     }
-
-    console.log(basketArr)
 }
 
 
