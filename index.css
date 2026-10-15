@@ -172,10 +172,9 @@ main {
 .modal-overlay{
     display: none;
     position: fixed;
-    left: 0;
-    top: 0;
-    width: 50%;
-    height: 50%;
+    inset: 0;
+    width: 200px;
+    height: 400px;
     background-color: white;
     margin: 0 auto;
 }
