@@ -6,6 +6,8 @@ const buttonPlusEl = document.getElementsByClassName('buttonPlus')
 
 const orderedEl = document.getElementById('orderedItems')
 
+const totalPriceEl = document.getElementById('totalPrice')
+
 document.addEventListener('click', function(e) {
     const buttonPlus = e.target.closest('[data-plus]')
     if(buttonPlus){
@@ -56,5 +58,13 @@ function handleAddingItems(orderID){
     return `<p>${item.name} <button class="removeBtn" data-remove="${item.id}">remove</button> ${item.price}$</p>`}).join('')
 
     orderedEl.innerHTML = basketItem
+    
+    const basketTotal = basketArr.reduce((total, currentElement) =>
+    total + currentElement.price, 0)
+    return basketTotal
+
+
+    totalPriceEl.innerHTML = basketTotal
 }
+
 
