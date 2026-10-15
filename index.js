@@ -12,6 +12,8 @@ document.addEventListener('click', function(e) {
     const buttonPlus = e.target.closest('[data-plus]')
     if(buttonPlus){
         handleAddingItems(buttonPlus.dataset.plus)
+    } else if  (e.target.dataset.remove) {
+        handleRemoveClick(e.target.dataset.remove)
     }
 })
 
@@ -80,5 +82,16 @@ function handleAddingItems(orderID){
     }
 }
 
+function handleRemoveClick(item) {
+    const selectedItem = basketArr.findIndex(item => item.id === Number(item))
+
+    if (selectedItem) {
+        basketArr.splice(selectedItem, 1)
+        updateTotalPrice()
+        renderBasket()
+    }
+
+    console.log(basketArr)
+}
 
 
