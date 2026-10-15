@@ -27,7 +27,7 @@ const menuItem = menuArray.map (function (item) {
         <h5 class="itemPrice">${item.price} $</h5>
     </div>
     <div class="end">
-        <button class="buttonPlus" ><i class="fa-solid fa-plus circle" data-plus="${item.id}"></i></button>
+        <button class="buttonPlus" ><i class="fa-solid fa-plus circle data-plus="${item.id}></i></button>
     </div>
     </section>
     
@@ -39,32 +39,36 @@ menuEl.innerHTML += menuItem
 
 const basketArr = []
 
-function handleAddingItems(orderID){
-    const basketItems = document.getElementById('orderedItems')
-    
-    const handleObj = menuArray.find(function(item) {
-        return item.id === Number(orderID)
-    })
-    
-
-    if (orderID) {
-            document.getElementById('menuOrder').classList.remove('hidden')
-    }
-
-
-    basketArr.push(handleObj)
-
+function renderBasket(item) {
     const basketItem = basketArr.map (function (item) {
     return `<p>${item.name} <button class="removeBtn" data-remove="${item.id}">remove</button> ${item.price}$</p>`}).join('')
 
     orderedEl.innerHTML = basketItem
-    
+}
+
+function updateTotalPrice(price) {
     const basketTotal = basketArr.reduce((total, currentElement) =>
     total + currentElement.price, 0)
-    return basketTotal
-
-
-    totalPriceEl.innerHTML = basketTotal
+    totalPriceEl.textContent = basketTotal
 }
+
+function handleAddingItems(orderID){
+    const basketItems = document.getElementById('orderedItems')
+    
+    const selectedItem = menuArray.find(function(item) {
+        return item.id === Number(orderID)
+    })
+    
+    if(!selectedItem) return
+
+    basketArr.push(selectedItem)
+
+    renderBasket()
+
+    if (selectedItem) {
+            document.getElementById('menuOrder').classList.remove('hidden')
+    }
+}
+
 
 
