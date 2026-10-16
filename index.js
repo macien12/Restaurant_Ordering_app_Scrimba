@@ -18,6 +18,8 @@ const discountMessage = document.getElementById('discountMessage')
 
 const modalRate = document.getElementById('modalRate')
 
+// const selectedRating = e.target.dataset.rating
+
 document.addEventListener('click', function(e) {
     const buttonPlus = e.target.closest('[data-plus]')
     if(buttonPlus){

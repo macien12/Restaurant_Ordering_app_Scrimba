@@ -314,6 +314,11 @@ main {
     flex-direction: column;
 }
 
+#ratingSection.show {
+    display: flex;
+    flex-direction: column;
+}
+
 .stars {
     display: inline-block;
     color: yellow;
