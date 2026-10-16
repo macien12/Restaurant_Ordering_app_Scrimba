@@ -34,7 +34,7 @@ const menuItem = menuArray.map (function (item) {
     <div class="mid">
         <h4 class="itemName">${item.name}</h4>
         <p class="itemIng">${item.ingredients.join(', ')}</p>
-        <h5 class="itemPrice">${item.price} $</h5>
+        <h5 class="itemPrice">${item.price} PLN</h5>
     </div>
     <div class="end">
         <button class="buttonPlus" data-plus="${item.id}" ><i class="fa-solid fa-plus circle" ></i></button>
@@ -58,7 +58,7 @@ function renderBasket() {
                     </button>
                 </div>
 
-                <span class="orderedPrice">$${item.price}</span>
+                <span class="orderedPrice">PLN ${item.price}</span>
             </div>
     `}).join('')
 

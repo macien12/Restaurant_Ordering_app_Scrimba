@@ -13,7 +13,7 @@ button, input[type="submit"], input[type="reset"] {
 body {
     margin: 0;
     padding: 0;
-    font-family: "Smythe", system-ui;
+    font-family: "Rubik Spray Paint", system-ui;
 } 
 
 .smythe-regular {
@@ -23,7 +23,8 @@ body {
 }
 
 .smytheFont {
-    font-family: "Smythe", system-ui;
+    font-family: "Rubik Spray Paint", system-ui;
+    font-weight: 200;
 }
 
 .white {
@@ -35,7 +36,6 @@ header {
     background-size: cover;
     background-position: center;
     height: 400px;
-
     display: flex;
     align-items: center;
 }
