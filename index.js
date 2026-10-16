@@ -81,7 +81,9 @@ function updateTotalPrice() {
 
     const finalPrice = kompotCheck && hasPierogi  ? basketTotal * 0.85 : basketArr.price
 
-    return finalPrice
+    if (kompotCheck && hasPierogi || hasSchabowy) {
+        finalPrice
+    }
 }
 
 function handleAddingItems(orderID){
