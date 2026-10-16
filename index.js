@@ -18,6 +18,8 @@ const discountMessage = document.getElementById('discountMessage')
 
 const ratingSection = document.getElementById('ratingSection')
 
+const submitSection = document.getElementById('submit-Section')
+
 let selectedRating = 0
 
 // const selectedRating = e.target.dataset.rating
@@ -34,6 +36,8 @@ document.addEventListener('click', function(e) {
         handleRateUs(e.target.dataset.rate)
     } else if (e.target.dataset.rating) {
         handleStars(e.target.dataset.rating)
+    } else if (e.target.dataset.submit) {
+        handleSubmit(e.target.dataset.submit)
     }
 })
 
@@ -186,4 +190,9 @@ function handleStars(rating) {
     })
 }
 
+function handleSubmit() {
+    submitSection.classList.remove('hidden')
+    ratingSection.classList.add('hidden')
+    orderCompletedEl.classList.add('hidden')
+}
 
