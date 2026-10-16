@@ -12,7 +12,7 @@ const modal = document.getElementById('modal')
 
 const orderCompletedEl = document.getElementById('orderCompleted')
 
-const form = document.getElementById('formEl')
+const form = document.getElementById('paymentForm')
 
 document.addEventListener('click', function(e) {
     const buttonPlus = e.target.closest('[data-plus]')
@@ -22,8 +22,6 @@ document.addEventListener('click', function(e) {
         handleRemoveClick(e.target.dataset.remove)
     } else if (e.target.dataset.order) {
         handleModal(e.target.dataset.order)
-    } else if (e.target.dataset.payment) {
-        handlePayment(e.target.dataset.payment)
     }
 })
 
@@ -107,7 +105,7 @@ function handleModal(item){
 }
 
 function handlePayment(modalId){
-    modal.classList.add("hidden")
+    modal.classList.remove("show")
     orderCompletedEl.classList.remove("hidden")
 
 }
@@ -115,4 +113,6 @@ function handlePayment(modalId){
 
 form.addEventListener('submit', function(e) {
     e.preventDefault()
+
+    handlePayment()
 })
