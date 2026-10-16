@@ -173,12 +173,15 @@ function handleStars(rating) {
     stars.forEach(function(star) {
         const startNumber = Number(star.dataset.rating)
 
-        if (selectedRating <= startNumber) {
-            star.style.color = "black"
-        } else {
+        if (startNumber <= selectedRating) {
             star.style.color = "yellow"
             star.classList.remove('fa-regular')
             star.classList.add('fa-solid')
+            
+        } else {
+            star.style.color = "black"
+            star.classList.remove('fa-solid')
+            star.classList.add('fa-regular')
         }
     })
 }
