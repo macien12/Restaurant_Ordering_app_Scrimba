@@ -71,6 +71,17 @@ function updateTotalPrice() {
     const basketTotal = basketArr.reduce((total, currentElement) =>
     total + currentElement.price, 0)
     totalPriceEl.textContent = basketTotal
+
+
+    const kompotCheck = basketArr.some(item => item.name === kompot)
+
+    const hasPierogi = basketArr.some(item => item.name === pierogi )
+
+    const hasSchabowy = basketArr.some(item => item.name === schabowy )
+
+    const finalPrice = kompotCheck && hasPierogi  ? basketTotal * 0.85 : basketArr.price
+
+    return finalPrice
 }
 
 function handleAddingItems(orderID){
@@ -127,3 +138,6 @@ function handleNamePayment() {
 }
 
     
+function handleDiscount(item) {
+
+}
