@@ -18,6 +18,8 @@ const discountMessage = document.getElementById('discountMessage')
 
 const ratingSection = document.getElementById('ratingSection')
 
+let selectedRating = 0
+
 // const selectedRating = e.target.dataset.rating
 
 document.addEventListener('click', function(e) {
@@ -28,8 +30,10 @@ document.addEventListener('click', function(e) {
         handleRemoveClick(e.target.dataset.remove)
     } else if (e.target.dataset.order) {
         handleModal(e.target.dataset.order)
-    } else if (e.target.dataset.rating) {
-        handleRateUs(e.target.dataset.rating)
+    } else if (e.target.dataset.rate) {
+        handleRateUs(e.target.dataset.rate)
+    } else if (e.target.dataset.ratings) {
+        handleStars(e.target.dataset.ratings)
     }
 })
 
@@ -156,18 +160,15 @@ function handleNamePayment() {
     payerName.textContent = document.getElementById('name').value
 }
 
-function handleRateUs(e) {
-    // modal.classList.remove('show')
-    // ratingSection.classList.remove('hidden')
-    // // const ratingStar = e.target('[data-rating]')
-    
-    
-    // if (ratingStar) {
-    //     console.log(ratingStar.dataset.rating)
-    // }
+function handleRateUs() {
     ratingSection.classList.remove('hidden')
 
-    const ratingStar = (e.target.dataset.rating)
+}
+
+function handleStars(e) {
+    selectedRating = Number(e.target.dataset.rating)
+
+    console.log(selectedRating)
 }
 
 
