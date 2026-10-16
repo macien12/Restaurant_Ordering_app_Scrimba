@@ -14,6 +14,8 @@ const orderCompletedEl = document.getElementById('orderCompleted')
 
 const form = document.getElementById('paymentForm')
 
+const basketEl = document.getElementById('basket')
+
 document.addEventListener('click', function(e) {
     const buttonPlus = e.target.closest('[data-plus]')
     if(buttonPlus){
@@ -52,7 +54,7 @@ const basketArr = []
 function renderBasket(item) {
     const basketItem = basketArr.map (function (item) {
     return `
-            <div class="itemPosition">
+            <div class="itemPosition" id="basket">
                 <div class="itemDetails">
                     <span class="orderedName">${item.name}</span>
                     <button class="removeBtn" data-remove="${item.id}">
@@ -107,6 +109,7 @@ function handleModal(item){
 function handlePayment(modalId){
     modal.classList.remove("show")
     orderCompletedEl.classList.remove("hidden")
+    basketEl.classList.add("hidden")
 
 }
 
