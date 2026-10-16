@@ -299,3 +299,12 @@ main {
         padding: 16px;
     }
 }
+
+#discountMessage {
+    color: #065F46;
+    background-color: #ECFDF5;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+}

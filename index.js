@@ -14,6 +14,8 @@ const form = document.getElementById('paymentForm')
 
 const payerName = document.getElementById('payer-name')
 
+const discountMessage = document.getElementById('discountMessage')
+
 document.addEventListener('click', function(e) {
     const buttonPlus = e.target.closest('[data-plus]')
     if(buttonPlus){
@@ -70,18 +72,28 @@ function renderBasket() {
 function updateTotalPrice() {
     const basketTotal = basketArr.reduce((total, currentElement) =>
     total + currentElement.price, 0)
-    totalPriceEl.textContent = basketTotal
-
 
     const kompotCheck = basketArr.some(item => item.name === "Kompot")
 
-    const hasPierogi = basketArr.some(item => item.name === "Pierogi" )
+    const hasPierogi = basketArr.some(item => item.name === "Pierogi")
 
-    const hasSchabowy = basketArr.some(item => item.name === "Schabowy" )
+    const hasSchabowy = basketArr.some(item => item.name === "Schabowy")
 
-    const finalPrice = kompotCheck && (hasPierogi || hasSchabowy) ? basketTotal * 0.85 : basketTotal
+    const hasDiscount = kompotCheck && (hasPierogi || hasSchabowy)
 
-    totalPriceEl.textContent = finalPrice.tofixed(2)
+    const finalPrice = kompotCheck && (hasPierogi || hasSchabowy) ? 
+    basketTotal * 0.85 : 
+    basketTotal
+
+    totalPriceEl.textContent = finalPrice.toFixed(2)
+
+    // Discount message
+
+    if (hasDiscount) {
+        discountMessage.classList.remove('hidden')
+    } else {
+        discountMessage.classList.add('hidden')
+    }
 }
 
 function handleAddingItems(orderID){
