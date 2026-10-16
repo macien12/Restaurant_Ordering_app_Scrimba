@@ -174,9 +174,11 @@ function handleStars(rating) {
         const startNumber = Number(star.dataset.rating)
 
         if (selectedRating <= startNumber) {
-            star.style.color = "yellow"
-        } else {
             star.style.color = "black"
+        } else {
+            star.style.color = "yellow"
+            star.classList.remove('fa-regular')
+            star.classList.add('fa-solid')
         }
     })
 }
