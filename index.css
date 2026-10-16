@@ -323,3 +323,85 @@ main {
     display: inline-block;
     color: black;
 }
+
+
+/* Rating section */
+#ratingSection {
+    margin: 30px auto;
+    padding: 30px 24px;
+    border: 1px solid #E5E5E5;
+    border-radius: 12px;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+
+/* Rating heading */
+.rateMessage {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin: 0 0 20px;
+}
+
+/* Star container */
+.stars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+/* Individual stars */
+.stars i {
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.stars i:hover {
+    transform: scale(1.15);
+}
+
+/* Review input */
+#ratingSection input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #DEDEDE;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+    font-size: 14px;
+}
+
+/* Review button */
+#ratingSection .payButton {
+    margin-top: 20px;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    background-color: #16DB99;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+}
+
+/* Thank-you message */
+#submit-Section {
+    margin: 30px auto;
+    padding: 30px 20px;
+    text-align: center;
+    background-color: #ECFDF5;
+    color: #065F46;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+/* Maintain hidden state */
+#ratingSection.hidden,
+#submit-Section.hidden {
+    display: none;
+}
