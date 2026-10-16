@@ -63,6 +63,8 @@ function renderBasket() {
     `}).join('')
 
     orderedEl.innerHTML = basketItem
+
+
 }
 
 function updateTotalPrice() {
@@ -72,7 +74,6 @@ function updateTotalPrice() {
 }
 
 function handleAddingItems(orderID){
-    const basketItems = document.getElementById('orderedItems')
     
     const selectedItem = menuArray.find(function(item) {
         return item.id === Number(orderID)
@@ -96,6 +97,10 @@ function handleRemoveClick(itemId) {
         updateTotalPrice()
         renderBasket()
     }
+
+    if (basketArr.length === 0) {
+        document.getElementById('menuOrder').classList.add('hidden')
+}
 }
 
 function handleModal(){
@@ -120,3 +125,5 @@ form.addEventListener('submit', function(e) {
 function handleNamePayment() {
     payerName.textContent = document.getElementById('name').value
 }
+
+    
