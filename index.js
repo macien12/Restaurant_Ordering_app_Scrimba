@@ -10,7 +10,7 @@ const modal = document.getElementById('modal')
 
 const orderCompletedEl = document.getElementById('orderCompleted')
 
-const form = document.getElementById('paymentForm')
+const paymentForm = document.getElementById('paymentForm')
 
 const payerName = document.getElementById('payer-name')
 
@@ -18,11 +18,9 @@ const discountMessage = document.getElementById('discountMessage')
 
 const ratingSection = document.getElementById('ratingSection')
 
-const submitSection = document.getElementById('submit-Section')
+const reviewConfirmationEl = document.getElementById('submit-Section')
 
 let selectedRating = 0
-
-// const selectedRating = e.target.dataset.rating
 
 document.addEventListener('click', function(e) {
     const buttonPlus = e.target.closest('[data-plus]')
@@ -31,13 +29,13 @@ document.addEventListener('click', function(e) {
     } else if  (e.target.dataset.remove) {
         handleRemoveClick(e.target.dataset.remove)
     } else if (e.target.dataset.order) {
-        handleModal(e.target.dataset.order)
+        handleModal()
     } else if (e.target.dataset.rate) {
-        handleRateUs(e.target.dataset.rate)
+        handleRateUs()
     } else if (e.target.dataset.rating) {
-        handleStars(e.target.dataset.rating)
+        handleStarRating(e.target.dataset.rating)
     } else if (e.target.dataset.submit) {
-        handleSubmit(e.target.dataset.submit)
+        handleSubmit()
     }
 })
 
@@ -87,15 +85,15 @@ function updateTotalPrice() {
     const basketTotal = basketArr.reduce((total, currentElement) =>
     total + currentElement.price, 0)
 
-    const kompotCheck = basketArr.some(item => item.name === "Kompot")
+    const hasKompot = basketArr.some(item => item.name === "Kompot")
 
     const hasPierogi = basketArr.some(item => item.name === "Pierogi")
 
     const hasSchabowy = basketArr.some(item => item.name === "Schabowy")
 
-    const hasDiscount = kompotCheck && (hasPierogi || hasSchabowy)
+    const hasDiscount = hasKompot && (hasPierogi || hasSchabowy)
 
-    const finalPrice = kompotCheck && (hasPierogi || hasSchabowy) ? 
+    const finalPrice = hasDiscount ? 
     basketTotal * 0.85 : 
     basketTotal
 
@@ -152,7 +150,7 @@ function handlePayment(){
 }
 
 
-form.addEventListener('submit', function(e) {
+paymentForm.addEventListener('submit', function(e) {
     e.preventDefault()
 
     handlePayment()
@@ -169,16 +167,16 @@ function handleRateUs() {
 
 }
 
-function handleStars(rating) {
+function handleStarRating(rating) {
     selectedRating = Number(rating)
 
     const stars = document.querySelectorAll('[data-rating]')
 
     stars.forEach(function(star) {
-        const startNumber = Number(star.dataset.rating)
+        const starNumber = Number(star.dataset.rating)
 
-        if (startNumber <= selectedRating) {
-            star.style.color = "yellow"
+        if (starNumber <= selectedRating) {
+            star.style.color = "#E9AC25"
             star.classList.remove('fa-regular')
             star.classList.add('fa-solid')
             
@@ -191,7 +189,7 @@ function handleStars(rating) {
 }
 
 function handleSubmit() {
-    submitSection.classList.remove('hidden')
+    reviewConfirmationEl.classList.remove('hidden')
     ratingSection.classList.add('hidden')
     orderCompletedEl.classList.add('hidden')
 }

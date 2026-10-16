@@ -17,12 +17,6 @@ body {
     font-weight: 300;
 } 
 
-.smythe-regular {
-  font-family: "Smythe", system-ui;
-  font-weight: 400;
-  font-style: normal;
-}
-
 .displayFont {
     font-family: "Rubik Spray Paint", system-ui;
     font-weight: 200;
@@ -309,21 +303,10 @@ main {
     text-align: center;
 }
 
-#modalRate {
-    display: flex;
-    flex-direction: column;
-}
-
 #ratingSection.show {
     display: flex;
     flex-direction: column;
 }
-
-.stars {
-    display: inline-block;
-    color: black;
-}
-
 
 /* Rating section */
 #ratingSection {
@@ -344,6 +327,8 @@ main {
 
 /* Star container */
 .stars {
+    display: inline-block;
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
