@@ -28,7 +28,9 @@ document.addEventListener('click', function(e) {
         handleRemoveClick(e.target.dataset.remove)
     } else if (e.target.dataset.order) {
         handleModal(e.target.dataset.order)
-    } 
+    } else if (e.target.dataset.rating) {
+        handleRateUs(e.target.dataset.rating)
+    }
 })
 
 
@@ -154,13 +156,13 @@ function handleNamePayment() {
     payerName.textContent = document.getElementById('name').value
 }
 
-function handleRateUs() {
+function handleRateUs(e) {
     modal.classList.remove('show')
     ratingSection.classList.remove('hidden')
     const ratingStar = e.target('[data-rating]')
     
     
     if (ratingStar) {
-        console.log(e.target('[data-rating]'))
+        console.log(ratingStar.dataset.rating)
     }
 }
