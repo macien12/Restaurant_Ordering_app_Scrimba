@@ -16,6 +16,8 @@ const payerName = document.getElementById('payer-name')
 
 const discountMessage = document.getElementById('discountMessage')
 
+const modalRate = document.getElementById('modalRate')
+
 document.addEventListener('click', function(e) {
     const buttonPlus = e.target.closest('[data-plus]')
     if(buttonPlus){
@@ -143,13 +145,15 @@ form.addEventListener('submit', function(e) {
 
     handlePayment()
     handleNamePayment()
+    handleRateUs()
 })
 
 function handleNamePayment() {
     payerName.textContent = document.getElementById('name').value
 }
 
+function handleRateUs() {
+    modal.classList.remove('show')
+    modalRate.classList.remove('hidden')
     
-function handleDiscount(item) {
-
 }

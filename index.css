@@ -308,3 +308,13 @@ main {
     font-size: 14px;
     text-align: center;
 }
+
+#modalRate {
+    display: flex;
+    flex-direction: column;
+}
+
+.stars {
+    display: inline-block;
+    color: yellow;
+}
