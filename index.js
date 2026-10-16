@@ -14,7 +14,7 @@ const orderCompletedEl = document.getElementById('orderCompleted')
 
 const form = document.getElementById('paymentForm')
 
-const basketEl = document.getElementById('basket')
+const payerName = document.getElementById('payer-name')
 
 document.addEventListener('click', function(e) {
     const buttonPlus = e.target.closest('[data-plus]')
@@ -24,7 +24,9 @@ document.addEventListener('click', function(e) {
         handleRemoveClick(e.target.dataset.remove)
     } else if (e.target.dataset.order) {
         handleModal(e.target.dataset.order)
-    }
+    } else if (e.target.dataset.pay) (
+        handleNamePayment(e.target.dataset.pay)
+    )
 })
 
 
@@ -54,7 +56,7 @@ const basketArr = []
 function renderBasket(item) {
     const basketItem = basketArr.map (function (item) {
     return `
-            <div class="itemPosition" id="basket">
+            <div class="itemPosition">
                 <div class="itemDetails">
                     <span class="orderedName">${item.name}</span>
                     <button class="removeBtn" data-remove="${item.id}">
@@ -69,7 +71,7 @@ function renderBasket(item) {
     orderedEl.innerHTML = basketItem
 }
 
-function updateTotalPrice(price) {
+function updateTotalPrice() {
     const basketTotal = basketArr.reduce((total, currentElement) =>
     total + currentElement.price, 0)
     totalPriceEl.textContent = basketTotal
@@ -102,14 +104,14 @@ function handleRemoveClick(itemId) {
     }
 }
 
-function handleModal(item){
+function handleModal(){
     modal.classList.add("show")
 }
 
-function handlePayment(modalId){
+function handlePayment(){
     modal.classList.remove("show")
     orderCompletedEl.classList.remove("hidden")
-    basketEl.classList.add("hidden")
+    document.getElementById('menuOrder').classList.add('hidden')
 
 }
 
@@ -119,3 +121,7 @@ form.addEventListener('submit', function(e) {
 
     handlePayment()
 })
+
+function handleNamePayment() {
+    payerName.textContent = document.getElementById('name').value
+}

@@ -30,7 +30,7 @@
     </div>
 
     <div class="hidden" id="orderCompleted" data-payment="paymentData">
-        <h2>Thanks, James! Your order is on its way!</h2>
+        <h2>Thanks, <span id="payer-name"></span> Your order is on its way!</h2>
     </div>
 
     <div id="modal" class="modal-overlay">
@@ -60,7 +60,8 @@
                 type="submit" 
                 id="payButton"
                 class="payButton inputEl" 
-                value="Pay">
+                value="Pay"
+                data-pay="pay">
             </form>
         </div>
     </div>
