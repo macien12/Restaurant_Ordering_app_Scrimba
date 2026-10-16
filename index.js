@@ -79,11 +79,9 @@ function updateTotalPrice() {
 
     const hasSchabowy = basketArr.some(item => item.name === "Schabowy" )
 
-    const finalPrice = kompotCheck && hasPierogi  ? basketTotal * 0.85 : basketArr.price
+    const finalPrice = kompotCheck && hasPierogi || kompotCheck && hasSchabowy  ? basketTotal * 0.85 : basketTotal
 
-    if (kompotCheck && hasPierogi || hasSchabowy) {
-        totalPriceEl.textContent = finalPrice
-    }
+    totalPriceEl.textContent = finalPrice.tofixed(2)
 }
 
 function handleAddingItems(orderID){
