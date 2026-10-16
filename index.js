@@ -2,8 +2,6 @@ import { menuArray } from './data.js'
 
 const menuEl = document.getElementById('menuContainer')
 
-const buttonPlusEl = document.getElementsByClassName('buttonPlus')
-
 const orderedEl = document.getElementById('orderedItems')
 
 const totalPriceEl = document.getElementById('totalPrice')
@@ -24,9 +22,7 @@ document.addEventListener('click', function(e) {
         handleRemoveClick(e.target.dataset.remove)
     } else if (e.target.dataset.order) {
         handleModal(e.target.dataset.order)
-    } else if (e.target.dataset.pay) (
-        handleNamePayment(e.target.dataset.pay)
-    )
+    } 
 })
 
 
@@ -44,8 +40,6 @@ const menuItem = menuArray.map (function (item) {
         <button class="buttonPlus" data-plus="${item.id}" ><i class="fa-solid fa-plus circle" ></i></button>
     </div>
     </section>
-    
-    
     `
 }).join('')
 
@@ -53,7 +47,7 @@ menuEl.innerHTML += menuItem
 
 const basketArr = []
 
-function renderBasket(item) {
+function renderBasket() {
     const basketItem = basketArr.map (function (item) {
     return `
             <div class="itemPosition">
@@ -120,6 +114,7 @@ form.addEventListener('submit', function(e) {
     e.preventDefault()
 
     handlePayment()
+    handleNamePayment()
 })
 
 function handleNamePayment() {
