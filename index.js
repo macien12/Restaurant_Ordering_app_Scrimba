@@ -32,8 +32,8 @@ document.addEventListener('click', function(e) {
         handleModal(e.target.dataset.order)
     } else if (e.target.dataset.rate) {
         handleRateUs(e.target.dataset.rate)
-    } else if (e.target.dataset.ratings) {
-        handleStars(e.target.dataset.ratings)
+    } else if (e.target.dataset.rating) {
+        handleStars(e.target.dataset.rating)
     }
 })
 
@@ -153,7 +153,7 @@ form.addEventListener('submit', function(e) {
 
     handlePayment()
     handleNamePayment()
-    handleRateUs(e)
+    handleRateUs()
 })
 
 function handleNamePayment() {
@@ -165,10 +165,12 @@ function handleRateUs() {
 
 }
 
-function handleStars(e) {
-    selectedRating = Number(e.target.dataset.rating)
+function handleStars(rating) {
+    selectedRating = Number(rating)
 
-    console.log(selectedRating)
+    selectedRating.forEach((star) =>
+        document.querySelectorAll('[data-rating]').style.color="yellow"
+    )
 }
 
 
