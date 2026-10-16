@@ -168,9 +168,17 @@ function handleRateUs() {
 function handleStars(rating) {
     selectedRating = Number(rating)
 
-    selectedRating.forEach((star) =>
-        document.querySelectorAll('[data-rating]').style.color="yellow"
-    )
+    const stars = document.querySelectorAll('[data-rating]')
+
+    stars.forEach(function(star) {
+        const startNumber = Number(star.dataset.rating)
+
+        if (selectedRating <= startNumber) {
+            star.style.color = "yellow"
+        } else {
+            star.style.color = "black"
+        }
+    })
 }
 
 
