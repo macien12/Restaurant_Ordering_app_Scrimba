@@ -210,3 +210,13 @@ main {
 .payButton {
     margin-top: 20px;
 }
+
+.payButton {
+    background-color: #16DB99;
+    color: white;
+    min-width: 100%;
+    padding: 15px;
+    border-radius: 2px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold; 
+}
