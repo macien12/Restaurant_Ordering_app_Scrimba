@@ -24,18 +24,19 @@
         <div id="orderedItems"></div>
         <h3 class="priceEl">
             <span>Total Price:</span>
-            <span><span id="totalPrice">0</span>$</span>
+            <span>$<span id="totalPrice">0</span></span>
         </h3>
         <button class="completeBtn" data-order="orderData">Complete order</button>
     </div>
 
     <div id="modal" class="modal-overlay">
-        <h3>Enter card details</h3>
-        <input type="text" id="name" placeholder="Enter your name">
-        <input type="number" id="cardNumber" placeholder="Enter card number">
-        <input type="number" id="cvv" placeholder="Enter CVV">
-        <button id="payButton" class="payButton"></button>
-
+        <div class="modalContent">
+            <h3>Enter card details</h3>
+            <input type="text" id="name" placeholder="Enter your name">
+            <input type="number" id="cardNumber" placeholder="Enter card number">
+            <input type="number" id="cvv" placeholder="Enter CVV">
+            <button id="payButton" class="payButton">Pay</button>
+        </div>
     </div>
     </main>
 

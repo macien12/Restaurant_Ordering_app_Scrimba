@@ -170,16 +170,43 @@ main {
 }
 
 .modal-overlay{
-    display: none;
-    position: fixed;
-    inset: 0;
-    width: 200px;
-    height: 400px;
-    background-color: white;
-    margin: 0 auto;
+  display: none;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: white;
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 
 .show {
-    display: inline;
+    display: block;
 }
 
+.modalContent {
+    display: grid;
+    padding: 50px;
+    gap: 20px;
+}
+
+.modalContent h3 {
+    font-size: 2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.modalContent input {
+    width: 400px;
+    height: 50px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #757575;
+}
+
+.payButton {
+    margin-top: 20px;
+}
