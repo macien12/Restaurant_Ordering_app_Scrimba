@@ -157,12 +157,17 @@ function handleNamePayment() {
 }
 
 function handleRateUs(e) {
-    modal.classList.remove('show')
+    // modal.classList.remove('show')
+    // ratingSection.classList.remove('hidden')
+    // // const ratingStar = e.target('[data-rating]')
+    
+    
+    // if (ratingStar) {
+    //     console.log(ratingStar.dataset.rating)
+    // }
     ratingSection.classList.remove('hidden')
-    const ratingStar = e.target('[data-rating]')
-    
-    
-    if (ratingStar) {
-        console.log(ratingStar.dataset.rating)
-    }
+
+    const ratingStar = (e.target.dataset.rating)
 }
+
+
