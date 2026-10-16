@@ -35,25 +35,25 @@ header {
     background-size: cover;
     background-position: center;
     height: 400px;
+
+    display: flex;
+    align-items: center;
 }
 
 #headerEl {
-    position: relative;
-    inset: auto;
-    width: 500px;
-    margin: 0 auto;
-    top: 50%;
-    transform: translateY(-50%);
-    left: -20%;
+    width: 100%;
+    max-width: 500px;
+    padding: 0 24px;
+    box-sizing: border-box;
 
 }
 .heading1 {
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 400;
 }
 .heading2 {
     font-weight: lighter;
-    font-size: 2.5rem;
+    font-size: clamp(1.25rem, 4vw, 2.5rem);
 }
 
 .menuEl {
@@ -85,6 +85,8 @@ header {
 main {
     max-width: 600px;
     margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .itemName {
@@ -170,17 +172,19 @@ main {
 }
 
 .modal-overlay{
-  display: none;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  position: fixed;
-  width: 500px;
-  height: 500px;
-  background: white;
-  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    display: none;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: fixed;
+    width: min(90%, 500px);
+    height: fit-content;
+    max-height: 90dvh;
+    overflow-y: auto;
+    background: white;
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 
 .show {
@@ -246,4 +250,44 @@ main {
 
 #orderCompleted.hidden {
     display: none;
+}
+
+
+@media (max-width: 600px) {
+    header {
+        min-height: 240px;
+    }
+
+    .icon {
+        font-size: 3.5rem;
+    }
+
+    .itemName {
+        font-size: 1.6rem;
+    }
+
+    .itemPrice {
+        font-size: 1.25rem;
+    }
+
+    .orderedName {
+        font-size: 1.4rem;
+    }
+
+    .orderedPrice {
+        font-size: 1.1rem;
+    }
+
+    .buttonPlus {
+        width: 44px;
+        height: 44px;
+    }
+
+    #orderCompleted {
+        width: 100%;
+        height: auto;
+        min-height: 120px;
+        box-sizing: border-box;
+        padding: 16px;
+    }
 }
