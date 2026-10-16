@@ -229,3 +229,21 @@ main {
     display: grid;
     gap: 15px;
 }
+
+#orderCompleted {
+    font-size: 1.2rem;
+    font-weight: lighter;
+    color: #065F46;
+    background-color: #ECFDF5;
+    height: 120px;
+    width: 500px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+#orderCompleted.hidden {
+    display: none;
+}

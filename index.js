@@ -10,6 +10,10 @@ const totalPriceEl = document.getElementById('totalPrice')
 
 const modal = document.getElementById('modal')
 
+const orderCompletedEl = document.getElementById('orderCompleted')
+
+const form = document.getElementById('formEl')
+
 document.addEventListener('click', function(e) {
     const buttonPlus = e.target.closest('[data-plus]')
     if(buttonPlus){
@@ -18,6 +22,8 @@ document.addEventListener('click', function(e) {
         handleRemoveClick(e.target.dataset.remove)
     } else if (e.target.dataset.order) {
         handleModal(e.target.dataset.order)
+    } else if (e.target.dataset.payment) {
+        handlePayment(e.target.dataset.payment)
     }
 })
 
@@ -98,8 +104,15 @@ function handleRemoveClick(itemId) {
 
 function handleModal(item){
     modal.classList.add("show")
-    console.log(item)
-console.log(typeof item)
+}
+
+function handlePayment(modalId){
+    modal.classList.add("hidden")
+    orderCompletedEl.classList.remove("hidden")
+
 }
 
 
+form.addEventListener('submit', function(e) {
+    e.preventDefault()
+})
