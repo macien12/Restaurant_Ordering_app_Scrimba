@@ -149,7 +149,7 @@ form.addEventListener('submit', function(e) {
 
     handlePayment()
     handleNamePayment()
-    handleRateUs()
+    handleRateUs(e)
 })
 
 function handleNamePayment() {
