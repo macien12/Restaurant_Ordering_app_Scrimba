@@ -16,7 +16,7 @@ const payerName = document.getElementById('payer-name')
 
 const discountMessage = document.getElementById('discountMessage')
 
-const modalRate = document.getElementById('modalRate')
+const ratingSection = document.getElementById('ratingSection')
 
 // const selectedRating = e.target.dataset.rating
 
@@ -156,6 +156,11 @@ function handleNamePayment() {
 
 function handleRateUs() {
     modal.classList.remove('show')
-    modalRate.classList.remove('hidden')
+    ratingSection.classList.remove('hidden')
+    const ratingStar = e.target('[data-rating]')
     
+    
+    if (ratingStar) {
+        console.log(e.target('[data-rating]'))
+    }
 }
